@@ -102,3 +102,20 @@ print(ans)
 # 솔루션을 출력 파일에 저장
 path_write = 'team01_groupwork/output/result.csv'
 ans.to_csv(path_write, index = False, header = False)
+
+#로그 관리
+
+import logging
+
+logger = logging.getLogger("과제1")
+stream_handler = logging.StreamHandler()
+formatter = logging.Formatter('%(name)s - %(levelname)s - %(asctime)s - %(message)s')
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+logger.setLevel(logging.DEBUG)
+
+logger.debug("Debug log")
+logger.info("Info log")
+logger.warning("Warning log")
+logger.error("Error log")
+logger.critical("Critical log")
